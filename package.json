@@ -17,7 +17,9 @@
     "gatsby-plugin-feed": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.11.0",
+    "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-plugin-typescript": "^5.11.0",
     "gatsby-remark-copy-linked-files": "^6.11.0",
     "gatsby-remark-images": "^7.11.0",
@@ -30,10 +32,12 @@
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.5",
     "prettier": "^2.8.8",
     "typescript": "^5.1.6"
   },
