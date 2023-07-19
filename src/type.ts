@@ -25,6 +25,7 @@ export interface Author {
 export interface Social {
   github: string;
   linkedIn: string;
+  resume: string;
   email: string;
 }
 
@@ -37,7 +38,7 @@ export interface Post {
 }
 
 export interface AllMarkdownRemark {
-  edges: { node: MarkdownRemark; next: { fields: Fields }; prev: { fields: Fields } }[];
+  edges: { node: MarkdownRemark; next: { fields: Fields }; previous: { fields: Fields } }[];
 }
 
 export interface MarkdownRemark {
