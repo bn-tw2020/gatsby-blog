@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../../layout';
 import Seo from '../../components/seo';
 import Utterances from '../../components/utterances';
-import { Post, SiteMetadata } from '../../../type';
+import { Post, SiteMetadata } from '../../type';
 import PostClass from '../../models/post';
 import PostHeader from '../../components/postHeader';
 import PostNavigator from '../../components/postNavigator';
