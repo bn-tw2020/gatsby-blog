@@ -22,7 +22,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Seo title='개발자 단민' />
+      <Seo title='개발자 스티치' />
       <Bio author={author} />
       <PostColumn posts={featuredPosts} />
     </Layout>
