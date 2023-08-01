@@ -1,13 +1,13 @@
-import { Link, graphql, useStaticQuery } from 'gatsby';
 import React, { ReactNode } from 'react';
 import * as S from './styled';
 // import PostSearch from '../post-search';
 
 type HeaderProps = {
+  location: Location;
   children: ReactNode;
 };
 
-const Header: React.FC<HeaderProps> = ({ children }) => {
+const Header: React.FC<HeaderProps> = ({ location, children }) => {
   //   const { data } = useStaticQuery(
   //     graphql`
   //       query {
@@ -28,21 +28,23 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   //     `,
   //   );
 
+  const { pathname } = location;
+
   return (
     <S.Wrapper>
       <S.Header>
         <div>
-          <Link className='link' to='/'>
+          <S.MenuLink to='/' isselected='false'>
             {children}
-          </Link>
+          </S.MenuLink>
         </div>
         <S.Menu>
-          <Link className='link' to='/about'>
+          <S.MenuLink to='/about' isselected={(pathname === '/about').toString()}>
             about
-          </Link>
-          <Link className='link' to='/posts'>
+          </S.MenuLink>
+          <S.MenuLink to='/posts' isselected={(pathname === '/posts').toString()}>
             posts
-          </Link>
+          </S.MenuLink>
           {/* <PostSearch
                 posts={data.allMarkdownRemark.edges.map(({ node }) => new PostClass(node, true))}
               /> */}

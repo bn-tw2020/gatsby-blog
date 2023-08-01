@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Author } from '@/src/type';
 import * as S from './styled';
 import ReactRotatingText from 'react-rotating-text';
-import Image from '../image';
 import SocialButton from '../socialButton';
 
 type BioProps = {
@@ -16,7 +15,7 @@ const Bio: React.FC<BioProps> = ({ author }) => {
     <S.Wrapper>
       <S.IntroWrapper>
         <S.Title>
-          안녕하세요.
+          안녕하세요!
           <br />
           <strong>
             <ReactRotatingText items={bio.description} />
@@ -35,9 +34,6 @@ const Bio: React.FC<BioProps> = ({ author }) => {
           <SocialButton name='email' link={social.email} />
         </S.SocialWrapper>
       </S.IntroWrapper>
-      <S.ImgWrapper>
-        <Image style={{ width: 250, height: 250 }} src={bio.thumbnail} alt='thumbnail' />
-      </S.ImgWrapper>
     </S.Wrapper>
   );
 };

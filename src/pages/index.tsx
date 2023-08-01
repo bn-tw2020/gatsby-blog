@@ -1,33 +1,30 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-
 import Bio from '../components/bio';
 import Layout from '../layout';
-import Seo from '../components/seo'
+import Seo from '../components/seo';
 import { AllMarkdownRemark, SiteMetadata } from '../type';
 import PostClass from '../models/post';
-import { getUniqueCategories } from '../utils/helpers';
+import PostColumn from '../components/postColumn';
 
 type BlogIndexProps = {
   data: {
     site: { siteMetadata: SiteMetadata };
     allMarkdownRemark: AllMarkdownRemark;
   };
+  location: Location;
 };
 
-const BlogIndex: React.FC<BlogIndexProps> = ({ data }) => {
+const BlogIndex: React.FC<BlogIndexProps> = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => new PostClass(node));
-  const { author, language } = data.site.siteMetadata;
-  const categories = ['All', ...getUniqueCategories(posts)];
-  const featuredTabIndex = categories.findIndex((category) => category === 'featured');
-  const [tabIndex, setTabIndex] = useState(featuredTabIndex === -1 ? 0 : featuredTabIndex);
-  const onTabIndexChange = useCallback((_e: void, value: number) => setTabIndex(value), []);
+  const featuredPosts = posts.filter((node) => node.categories.findIndex((category) => category === 'featured'));
+  const { author } = data.site.siteMetadata;
 
   return (
-    <Layout>
-      <Seo title='Home' />
+    <Layout location={location}>
+      <Seo title='개발자 단민' />
       <Bio author={author} />
-      {/* <PostTabs posts={posts} onChange={onTabIndexChange} tabs={categories} tabIndex={tabIndex} showMoreButton /> */}
+      <PostColumn posts={featuredPosts} />
     </Layout>
   );
 };
@@ -62,11 +59,14 @@ export const pageQuery = graphql`
           bio {
             role
             description
-            thumbnail
+            birth
+            residence
+            bachelorDegree
           }
           social {
             github
             linkedIn
+            resume
             email
           }
         }

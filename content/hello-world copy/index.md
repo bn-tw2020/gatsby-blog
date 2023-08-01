@@ -4,7 +4,7 @@ title: Hello World
 date: '2023-07-16 00:00:00'
 author: 스티치
 tags: 블로그 github-pages gatsby
-categories: featured
+categories: 블로그 featured
 ---
 
 This is my first post on my new fake blog! How exciting!

@@ -1,44 +1,38 @@
 import * as React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import GlobalStyle from '../styles/GlobalStyle';
 import * as S from './styled';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-import './_reset.scss';
-import './_markdown-style.scss';
+import './style.scss';
 
 type LayoutProps = {
+  location: Location;
   children: React.ReactNode;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ location, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
-          author {
-            name
-            social {
-              github
-            }
-          }
         }
       }
     }
   `);
-  const { title, author } = data.site.siteMetadata;
+  const { title } = data.site.siteMetadata;
 
   return (
-    <>
+    <S.Wrapper>
       <GlobalStyle />
-      <S.Wrapper>
-        <Header>{title}</Header>
+      <S.ContentWrapper>
+        {location && <Header location={location}>{title}</Header>}
         <S.Content>{children}</S.Content>
-        <Footer author={author} />
-      </S.Wrapper>
-    </>
+      </S.ContentWrapper>
+      <Footer />
+    </S.Wrapper>
   );
 };
 

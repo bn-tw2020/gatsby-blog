@@ -1,3 +1,4 @@
+import { colors } from '../../../src/styles/const';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
@@ -7,7 +8,7 @@ export const Header = styled.header`
   flex-direction: column;
   width: 100%;
   padding-bottom: 10px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid ${colors.black100};
   margin-top: 20px;
   margin-bottom: 40px;
   word-break: keep-all;
@@ -37,6 +38,7 @@ export const Categories = styled.div`
 export const Category = styled(Link)`
   margin-right: 4px;
   font-weight: 600;
+
   &:hover {
     text-decoration: underline;
   }
