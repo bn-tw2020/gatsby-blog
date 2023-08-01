@@ -1,12 +1,11 @@
-import { colors, contentMaxWidth, hoverUnderline } from '../../../src/styles/const';
+import { contentMaxWidth, hoverUnderline } from '../../../src/styles/const';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
 export const Wrapper = styled.div`
   min-height: 150px;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  position: relative;
 `;
 
 export const PostCard = styled(Link)`
@@ -22,15 +21,14 @@ export const PostCard = styled(Link)`
   cursor: pointer;
   transition: 0.3s;
   &:hover {
-    background-color: ${colors.gray10};
+    background-color: ${({ theme }) => theme.color.gray10};
   }
 `;
 
 export const Title = styled.div`
   font-size: 18px;
-  font-weight: 600;
   margin-bottom: 10px;
-  line-height: 1.4; ;
+  line-height: 1.4;
 `;
 
 export const Description = styled.p`
@@ -50,7 +48,11 @@ export const Info = styled.div`
   justify-content: space-between;
   font-size: 13px;
   width: 100%;
-  color: ${colors.gray60};
+  padding: 0 15px;
+  color: ${({ theme }) => theme.color.gray60};
+  font-family: GmarketSansLight;
+  position: absolute;
+  bottom: 25px;
 `;
 
 export const Date = styled.div``;
@@ -61,9 +63,9 @@ export const Categories = styled.div`
 
 export const Category = styled(Link)`
   margin-left: 4px;
-  color: ${colors.gray60};
-  ${hoverUnderline};
+  color: ${({ theme }) => theme.color.gray60};
+  ${({ theme }) => hoverUnderline(theme)};
   &:after {
-    background-color: ${colors.gray60};
+    background-color: ${({ theme }) => theme.color.gray60};
   }
 `;

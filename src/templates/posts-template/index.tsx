@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import { navigate } from 'gatsby';
 import * as S from './styled';
 
@@ -33,7 +33,7 @@ const PostsTemplate: React.FC<PostsTemplateProps> = ({ location, pageContext }) 
 
   return (
     <Layout location={location}>
-      <Seo title='Posts' />
+      <Seo title='개발자 스티치 | Posts' />
       <S.CategoryWrapper>
         <S.CategoryTitle>{categories[currentTabIndex]}</S.CategoryTitle>
         <S.CategorySubtitle>{`${posts.length} post${posts.length < 2 ? '' : 's'}`}</S.CategorySubtitle>

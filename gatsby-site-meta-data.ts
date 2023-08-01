@@ -1,5 +1,5 @@
 export default {
-  title: `개발하는 스티치`,
+  title: `개발자 스티치`,
   description: `개발자 스티치`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://github.com/bn-tw2020`,
@@ -23,7 +23,7 @@ export default {
     },
     social: {
       github: `https://github.com/bn-tw2020`,
-      linkedIn: `https://www.linkedin.com/in/%ED%83%9C%EC%9A%B0-%EB%82%A8-449403226/`,
+      linkedIn: `https://www.linkedin.com/in/태우-남-449403226/`,
       email: `skaxodn97@gmail.com`,
       resume: ``,
     },
@@ -42,32 +42,35 @@ export default {
         date: '2022.07.01 - 2022.08.31',
         en: 'Woowa Brothers Corp.',
         kr: '우아한형제들',
-        info: 'Wowahan Tech Camp Android 1th',
+        info: 'Woowahan Tech Camp(교육형 인턴)',
       },
     ],
 
     activities: [
       {
-        date: '2022.09 - NOW',
-        en: 'SOPT makers',
-        kr: '솝트 메이커스',
-        info: 'Organization makes products for SOPT',
+        date: '',
+        en: '',
+        kr: '',
+        info: '',
         link: '',
       },
     ],
+  },
 
+  // metadata for Playground Page
+  playground: {
     projects: [
       {
-        title: '',
-        description: '',
-        techStack: ['', ''],
-        thumbnailUrl: '',
+        title: 'first portfolio application',
+        description: '첫번째 포폴 사이트',
+        techStack: ['Android', 'Kotlin'],
+        thumbnailUrl: 'first-portfolio.png',
         links: {
           post: '',
           github: '',
+          demo: '',
           googlePlay: '',
           appStore: '',
-          demo: '',
         },
       },
     ],

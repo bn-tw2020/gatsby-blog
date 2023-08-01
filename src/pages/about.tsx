@@ -7,22 +7,21 @@ import { SiteMetadata } from '../type';
 import Introduction from '../components/introduction';
 import Timestamps from '../components/timestamps';
 
-type AboutPageProps = {
+type AboutProps = {
   data: {
     site: { siteMetadata: SiteMetadata };
   };
   location: Location;
 };
 
-const AboutPage: React.FC<AboutPageProps> = ({ location, data }) => {
+const About: React.FC<AboutProps> = ({ location, data }) => {
   const metaData = data.site.siteMetadata;
-  console.log('metaData', metaData);
   const { author, about } = metaData;
   const { careers, activities } = about;
 
   return (
     <Layout location={location}>
-      <Seo title='About' />
+      <Seo title='개발자 스티치 | About' />
       <Bio author={author} />
       <Introduction author={author} />
       <Timestamps title='Careers' timestamps={careers} />
@@ -31,7 +30,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ location, data }) => {
   );
 };
 
-export default AboutPage;
+export default About;
 
 export const pageQuery = graphql`
   query {
@@ -54,6 +53,7 @@ export const pageQuery = graphql`
             resume
           }
         }
+
         about {
           careers {
             date
@@ -61,25 +61,13 @@ export const pageQuery = graphql`
             en
             info
           }
+
           activities {
             date
             kr
             en
             info
             link
-          }
-          projects {
-            title
-            description
-            techStack
-            thumbnailUrl
-            links {
-              post
-              github
-              demo
-              googlePlay
-              appStore
-            }
           }
         }
       }

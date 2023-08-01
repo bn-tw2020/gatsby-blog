@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors, contentMaxWidth } from '../styles/const';
+import { contentMaxWidth, MOBILE_MEDIA_QUERY } from '../styles/const';
 
 export const Wrapper = styled.div`
   overflow-y: scroll;
@@ -14,18 +14,21 @@ export const ContentWrapper = styled.div`
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 60px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 60px 15px;
   margin-bottom: 61px;
-  background-color: ${colors.white100};
+  background-color: ${({ theme }) => theme.color.white100};
   box-shadow: 0 0 30px rgb(0 0 0 / 0.1);
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    margin-bottom: 39px;
+  }
 `;
 
 export const Content = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   width: 100%;
   max-width: ${contentMaxWidth};
 `;

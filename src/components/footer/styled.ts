@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { contentMaxWidth } from '../../styles/const';
+import { contentMaxWidth, MOBILE_MEDIA_QUERY } from '../../styles/const';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,21 +11,17 @@ export const Wrapper = styled.div`
   position: fixed;
   bottom: 0;
   z-index: -1;
-  background-color: #f8f9fa;
+  background-color: ${({ theme }) => theme.color.gray10};
   font-family: GmarketSansLight;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 13px;
+    height: 40px;
+  }
 `;
 
 export const Footer = styled.p`
   text-align: center;
   width: 100%;
   max-width: ${contentMaxWidth};
-  .link {
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--primary-text-color);
-    margin-right: 20px;
-  }
-  a {
-    color: #3a95ff;
-  }
 `;

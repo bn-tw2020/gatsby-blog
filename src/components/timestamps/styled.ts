@@ -1,4 +1,4 @@
-import { colors } from '../../../src/styles/const';
+import { MOBILE_MEDIA_QUERY } from '../../../src/styles/const';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
@@ -7,9 +7,13 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 50px 0;
+  margin-top: 50px;
   font-family: GmarketSansLight;
   white-space: nowrap;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 15px;
+  }
 `;
 
 export const Content = styled.div`
@@ -23,14 +27,16 @@ export const Timestamp = styled.div`
   width: 100%;
   margin-left: 5px;
   padding: 10px 0;
-  border-left: 1px solid ${colors.gray40};
-  font-weight: 400;
-  &:first-child {
+  border-left: 1px solid ${({ theme }) => theme.color.gray40};
+
+  &:first-of-type {
     padding-top: 7px;
   }
+
   &:last-child {
     padding-bottom: 7px;
   }
+
   &::before {
     position: relative;
     left: -1px;
@@ -38,10 +44,10 @@ export const Timestamp = styled.div`
     align-self: center;
     width: 5px;
     height: 5px;
-    background-color: ${colors.white100};
+    background-color: ${({ theme }) => theme.color.white100};
     border-radius: 5px;
     transform: translatex(-50%);
-    border: 1px solid ${colors.gray40};
+    border: 1px solid ${({ theme }) => theme.color.gray40};
   }
 `;
 
@@ -49,8 +55,15 @@ export const Date = styled.div`
   margin-left: 5px;
   margin-right: 5px;
   width: 200px;
-  color: ${colors.gray80};
+  color: ${({ theme }) => theme.color.gray80};
   align-self: center;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    width: 100px;
+    min-width: 100px;
+    white-space: pre-line;
+    line-height: 120%;
+  }
 `;
 
 export const Title = styled.div`
@@ -59,18 +72,38 @@ export const Title = styled.div`
   a {
     margin-left: 5px;
   }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    flex-direction: column;
+  }
 `;
 
 export const TitleEn = styled.div`
   font-family: GmarketSansMedium;
   font-size: 16px;
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 13px;
+  }
 `;
 
 export const TitleKr = styled.div`
   font-size: 13px;
   margin-left: 5px;
+  display: flex;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 10px;
+    margin-left: 0;
+    .link-icon {
+      width: 10px;
+    }
+  }
 `;
 
 export const Info = styled.div`
   margin-top: 5px;
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 10px;
+    margin-top: 3px;
+  }
 `;

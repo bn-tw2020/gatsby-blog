@@ -1,4 +1,4 @@
-import { colors, contentMaxWidth, hoverUnderline } from '../../styles/const';
+import { contentMaxWidth, hoverUnderline, MOBILE_MEDIA_QUERY } from '../../styles/const';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
@@ -10,8 +10,12 @@ export const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${colors.white100};
+  background-color: ${({ theme }) => theme.color.white100};
   z-index: 100;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    padding: 0 15px;
+  }
 `;
 
 export const Header = styled.div`
@@ -31,10 +35,14 @@ export const Menu = styled.div`
 
 export const MenuLink = styled(Link)<{ isselected: string }>`
   font-size: 17px;
-  ${hoverUnderline};
+  ${({ theme }) => hoverUnderline(theme)};
   &:after {
     height: 2px;
     bottom: -2px;
     transform: ${({ isselected }) => (isselected === 'true' ? 'scaleX(1)' : 'scaleX(0)')};
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 13px;
   }
 `;

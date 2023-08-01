@@ -1,4 +1,4 @@
-import { colors } from '../../../src/styles/const';
+import { MOBILE_MEDIA_QUERY } from '../../../src/styles/const';
 import styled from '@emotion/styled';
 
 export const CategoryWrapper = styled.div`
@@ -12,17 +12,18 @@ export const CategoryWrapper = styled.div`
 
 export const CategoryTitle = styled.div`
   width: fit-content;
-  padding-bottom: 7px;
   margin-bottom: 15px;
   font-size: 30px;
   text-align: center;
-  border-bottom: 2px solid ${colors.black100};
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    font-size: 25px;
+  }
 `;
 
 export const CategorySubtitle = styled.div`
   padding-bottom: 10px;
   font-size: 20px;
-  font-weight: 500;
   text-align: center;
   font-family: GmarketSansLight;
 `;

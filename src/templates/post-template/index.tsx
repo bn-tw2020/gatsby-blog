@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../layout';
 import Seo from '../../components/seo';
@@ -8,6 +8,7 @@ import PostClass from '../../models/post';
 import PostHeader from '../../components/postHeader';
 import PostNavigator from '../../components/postNavigator';
 import * as S from './styled';
+import { useViewCount } from '../../../src/hooks/useViewCount';
 
 type PostTemplateProps = {
   location: Location;
@@ -21,22 +22,13 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ location, data }) => {
   const { siteUrl, comments } = data.site?.siteMetadata;
   const utterancesRepo = comments?.utterances?.repo;
 
-  React.useEffect(() => {
-    if (!siteUrl) return;
-    const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
-    const key = curPost.slug.replace(/\//g, '');
+  const key = curPost.slug.replace(/\//g, '');
+  const { viewCount } = useViewCount(siteUrl, key);
 
-    // fetch(
-    //   `https://api.countapi.xyz/${process.env.NODE_ENV === 'development' ? 'get' : 'hit'}/${namespace}/${key}`,
-    // ).then(async (result) => {
-    //   const data = await result.json();
-    //   // setViewCount(data.value);
-    // });
-  }, [siteUrl, curPost.slug]);
   return (
     <Layout location={location}>
-      <Seo title={curPost?.title} description={curPost?.excerpt} />
-      <PostHeader post={curPost} viewCount={0} />
+      <Seo title={`개발자 스티치 | ${curPost?.title}`} description={curPost?.excerpt} />
+      <PostHeader post={curPost} viewCount={viewCount ?? 0} />
       <S.PostContent>
         <div className='markdown' dangerouslySetInnerHTML={{ __html: curPost.html }} />
       </S.PostContent>
@@ -55,7 +47,7 @@ export const pageQuery = graphql`
       html
       excerpt(pruneLength: 500, truncate: true)
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
         title
         categories
         author
@@ -70,7 +62,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
         title
         categories
         author
@@ -85,7 +77,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
         title
         categories
         author

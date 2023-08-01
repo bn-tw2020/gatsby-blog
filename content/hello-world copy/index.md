@@ -1,7 +1,7 @@
 ---
 emoji: 🔮
 title: Hello World
-date: '2023-07-16 00:00:00'
+date: '2023-07-16'
 author: 스티치
 tags: 블로그 github-pages gatsby
 categories: 블로그 featured
