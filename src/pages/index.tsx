@@ -38,6 +38,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
       </HitCount>
       <Bio author={author} />
 
+      <FeaturedPostColumn title='INTER' posts={internPosts} />
       <FeaturedPostColumn title='LIFE' posts={livePosts} />
       <FeaturedPostColumn title='EXPERIENCE' posts={experiencePosts} />
     </Layout>
