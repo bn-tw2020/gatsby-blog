@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 
 import PostClass from '@/src/models/post';
 
-import PostCard from '../postCard';
+import PostCard from '../PostCard';
 import * as S from './styled';
 
 type PostTabsProps = {

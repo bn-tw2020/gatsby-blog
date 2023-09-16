@@ -1,5 +1,5 @@
 import PostClass from '@/src/models/post';
-import FeaturedPostCard from '../featuredPostCard';
+import FeaturedPostCard from '../FeaturedPostCard';
 import * as S from './styled';
 
 type FeaturedPostColumnProps = {
