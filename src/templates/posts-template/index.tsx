@@ -1,8 +1,8 @@
 import { navigate } from 'gatsby';
 import React, { useMemo } from 'react';
 
-import PostTabs from '@/src/components/PostTabs';
-import Seo from '@/src/components/Seo';
+import PostTabs from '@/src/components/postTabs';
+import Seo from '@/src/components/seo';
 import Layout from '@/src/layout';
 import PostClass from '@/src/models/post';
 import { AllMarkdownRemark } from '@/src/type';

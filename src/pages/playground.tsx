@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import ProjectCard from '../components/ProjectCard';
-import Seo from '../components/Seo';
+import ProjectCard from '../components/projectCard';
+import Seo from '../components/seo';
 import Layout from '../layout';
 import { MOBILE_MEDIA_QUERY } from '../styles/const';
 import { SiteMetadata } from '../type';

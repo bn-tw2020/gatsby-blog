@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Activity, Career } from '@/src/type';
 
-import AboutTitle from '../AboutTitle';
+import AboutTitle from '../aboutTitle';
 import * as S from './styled';
 
 type TimestampsProps = {

@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Bio from '../components/Bio';
-import MainBanner from '../components/MainBanner';
-import Seo from '../components/Seo';
-import Timestamps from '../components/Timestamps';
+import Bio from '../components/bio';
+import MainBanner from '../components/mainBanner';
+import Seo from '../components/seo';
+import Timestamps from '../components/timestamps';
 import Layout from '../layout';
 import { SiteMetadata } from '../type';
 
