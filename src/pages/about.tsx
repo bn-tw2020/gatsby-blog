@@ -1,11 +1,12 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../layout';
-import Seo from '../components/seo';
+import React from 'react';
+
 import Bio from '../components/bio';
-import { SiteMetadata } from '../type';
 import Introduction from '../components/introduction';
+import Seo from '../components/seo';
 import Timestamps from '../components/timestamps';
+import Layout from '../layout';
+import { SiteMetadata } from '../type';
 
 type AboutProps = {
   data: {
@@ -23,7 +24,7 @@ const About: React.FC<AboutProps> = ({ location, data }) => {
     <Layout location={location}>
       <Seo title='개발자 스티치 | About' />
       <Bio author={author} />
-      <Introduction author={author} />
+      <Introduction bio={author.bio} />
       <Timestamps title='Careers' timestamps={careers} />
       <Timestamps title='Activities' timestamps={activities} />
     </Layout>
@@ -39,17 +40,16 @@ export const pageQuery = graphql`
         language
         author {
           name
+          nickname
+          stack
           bio {
-            role
-            description
-            birth
+            email
             residence
             bachelorDegree
           }
           social {
             github
             linkedIn
-            email
             resume
           }
         }

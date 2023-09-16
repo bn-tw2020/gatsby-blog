@@ -1,6 +1,7 @@
-import { hoverUnderline, MOBILE_MEDIA_QUERY } from '../../../src/styles/const';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+
+import { hoverUnderline, MOBILE_MEDIA_QUERY } from '../../../src/styles/const';
 
 const blinkingCursor = keyframes`
   0% {
@@ -100,7 +101,6 @@ export const SocialWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 5px;
   align-items: flex-end;
 
   @media ${MOBILE_MEDIA_QUERY} {
@@ -114,6 +114,6 @@ export const SocialWrapper = styled.div`
 
 export const SocialButton = styled.a`
   color: ${({ theme }) => theme.color.black100};
-  font-size: 16px;
+  font-size: 20px;
   ${({ theme }) => hoverUnderline(theme)};
 `;

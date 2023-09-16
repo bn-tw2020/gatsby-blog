@@ -1,6 +1,6 @@
 import type { GatsbyConfig } from 'gatsby';
+
 import siteMetadata from './gatsby-site-meta-data';
-import path from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata,

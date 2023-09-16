@@ -14,17 +14,15 @@ export default {
   author: {
     name: `스티치`,
     nickname: `stitch`,
+    stack: ['Android', 'Kotlin'],
     bio: {
-      role: `개발자`,
-      description: ['Android', 'Kotlin'],
-      birth: '1997.04.06',
+      email: `skaxodn97@gmail.com`,
       residence: 'South Korea',
       bachelorDegree: 'Computer Software Engineering',
     },
     social: {
       github: `https://github.com/bn-tw2020`,
       linkedIn: `https://www.linkedin.com/in/태우-남-449403226/`,
-      email: `skaxodn97@gmail.com`,
       resume: ``,
     },
   },
