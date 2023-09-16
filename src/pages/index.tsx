@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Bio from '../components/bio';
 import FeaturedPostColumn from '../components/featuredPostColumn';
+import MainBanner from '../components/mainBanner';
 import Seo from '../components/seo';
 import Layout from '../layout';
 import PostClass from '../models/post';
@@ -32,7 +32,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
     <Layout location={location}>
       <Seo title='개발자 스티치' />
       {/* <HitCount siteUrl={siteUrl} /> */}
-      <Bio author={author} />
+      <MainBanner author={author} />
 
       <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
       <FeaturedPostColumn title='인턴' posts={internPosts} />
