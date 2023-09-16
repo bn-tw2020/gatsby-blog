@@ -2,7 +2,6 @@
 emoji: 🔮
 title: item1-가변성을 제한하라
 date: '2023-08-20'
-author: 스티치
 tags: 블로그 github-pages gatsby
 categories: Effective-kotlin
 ---

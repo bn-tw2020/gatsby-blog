@@ -19,7 +19,6 @@ export const PostCard = styled(Link)`
   padding: 15px;
   margin-bottom: 15px;
   cursor: pointer;
-  transition: 0.3s;
   &:hover {
     background-color: ${({ theme }) => theme.color.gray10};
   }
@@ -38,6 +37,7 @@ export const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  word-break: break-word;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   font-family: GmarketSansLight;
