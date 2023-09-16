@@ -16,7 +16,7 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ location, children }) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>(getValueFromLocalStorage('theme' ?? 'light'));
+  const [theme, setTheme] = useState<'light' | 'dark'>(getValueFromLocalStorage('theme') ?? 'light');
 
   const handleTheme = () => {
     if (theme === 'dark') setTheme('light');
@@ -39,18 +39,17 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
   const { title } = data.site.siteMetadata;
 
   return (
-    <S.Wrapper>
-      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-        <GlobalStyle />
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <GlobalStyle />
+      <S.Wrapper>
         <ThemeToggle handleTheme={handleTheme} isDark={theme === 'dark'} />
-
         <S.ContentWrapper>
           {location && <Header location={location}>{title}</Header>}
           <S.Content>{children}</S.Content>
         </S.ContentWrapper>
         <Footer />
-      </ThemeProvider>
-    </S.Wrapper>
+      </S.Wrapper>
+    </ThemeProvider>
   );
 };
 
