@@ -8,6 +8,7 @@ const style = (theme: Theme) => css`
     box-sizing: border-box;
     appearance: none;
   }
+
   html {
     font-family: 'GmarketSansMedium';
     width: 100%;
@@ -49,8 +50,12 @@ const style = (theme: Theme) => css`
   .markdown {
     font-family: 'Noto Sans KR', sans-serif;
   }
+
+  .scroll-locked {
+    overflow: hidden;
+  }
 `;
 
-const GlobalStyle: React.FC = () => <Global styles={(theme) => style(theme)} />;
+const GlobalStyle: React.FC = () => <Global styles={style} />;
 
 export default GlobalStyle;

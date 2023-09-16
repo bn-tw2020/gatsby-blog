@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import { MOBILE_MEDIA_QUERY, contentMaxWidth, hoverUnderline } from '../../../src/styles/const';
+import { contentMaxWidth, hoverUnderline, MOBILE_MEDIA_QUERY } from '@/src/styles/const';
 
 export const Wrapper = styled.div`
   min-height: 150px;
@@ -22,6 +22,9 @@ export const PostCard = styled(Link)`
   cursor: pointer;
   &:hover {
     background-color: ${({ theme }) => theme.color.gray10};
+    @media ${MOBILE_MEDIA_QUERY} {
+      background-color: transparent;
+    }
   }
   @media ${MOBILE_MEDIA_QUERY} {
     &:active {

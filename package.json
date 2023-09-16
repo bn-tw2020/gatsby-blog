@@ -15,6 +15,7 @@
     "@radix-ui/react-icons": "^1.1.1",
     "eslint-plugin-react": "^7.33.2",
     "gatsby": "^5.11.0",
+    "gatsby-emotion-dark-mode": "^1.1.1",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/eslint-plugin": "^7.22.10",
+    "@types/react-dom": "^18.2.7",
     "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",

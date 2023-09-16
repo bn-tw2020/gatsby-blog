@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from 'gatsby';
 
 import siteMetadata from './gatsby-site-meta-data';
+import { darkTheme, lightTheme } from './src/styles/const';
 
 const config: GatsbyConfig = {
   siteMetadata,
@@ -14,6 +15,13 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-emotion-dark-mode`,
+      options: {
+        light: lightTheme,
+        dark: darkTheme,
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

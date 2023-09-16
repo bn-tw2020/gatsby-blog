@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import { contentMaxWidth, MOBILE_MEDIA_QUERY } from '../../../src/styles/const';
+import { contentMaxWidth, MOBILE_MEDIA_QUERY } from '@/src/styles/const';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -59,6 +59,8 @@ export const Emoji = styled.div`
 
 export const Title = styled.div`
   font-size: 18px;
+  word-break: break-all;
+  line-height: 120%;
 
   @media ${MOBILE_MEDIA_QUERY} {
     font-size: 15px;

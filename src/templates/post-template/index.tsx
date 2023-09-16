@@ -1,15 +1,15 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import PostHeader from '../../components/postHeader';
-import PostNavigator from '../../components/postNavigator';
-import Seo from '../../components/seo';
-import Utterances from '../../components/utterances';
-import Layout from '../../layout';
-import PostClass from '../../models/post';
-import { Post, SiteMetadata } from '../../type';
+import PostHeader from '@/src/components/postHeader';
+import PostNavigator from '@/src/components/postNavigator';
+import Seo from '@/src/components/seo';
+import Utterances from '@/src/components/utterances';
+import Layout from '@/src/layout';
+import PostClass from '@/src/models/post';
+import { Post, SiteMetadata } from '@/src/type';
+
 import * as S from './styled';
-// import { useViewCount } from '../../../src/hooks/useViewCount';
 
 type PostTemplateProps = {
   location: Location;
@@ -20,11 +20,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ location, data }) => {
   const curPost = new PostClass(data.cur);
   const prevPost = data.prev && new PostClass(data.prev);
   const nextPost = data.next && new PostClass(data.next);
-  const { comments } = data.site?.siteMetadata ?? null;
-  const utterancesRepo = comments?.utterances?.repo;
-
-  // const key = curPost.slug.replace(/\//g, '');
-  // const { viewCount } = useViewCount(siteUrl, key);
+  const utterancesRepo = data.site.siteMetadata.comments.utterances.repo;
 
   return (
     <Layout location={location}>
