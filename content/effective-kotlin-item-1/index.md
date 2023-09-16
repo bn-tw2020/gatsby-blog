@@ -294,6 +294,7 @@ class UserRepository {
 ```
 
 ## 정리
+
 - var보다는 val을 사용하는 것이 좋다.
 - mutable 프로퍼티보다는 immutable 프로퍼티를 사용하는 것이 좋다.
 - mutable 객체와 클래스보다는 immutable 객체와 클래스를 사용하는 것이 좋다.
