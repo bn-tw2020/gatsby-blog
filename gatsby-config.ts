@@ -79,14 +79,14 @@ const config: GatsbyConfig = {
         dark: darkTheme,
       },
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://dev-stitch.netlify.app/',
-        sitemap: 'https://dev-stitch.netlify.app/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     host: 'https://dev-stitch.netlify.app/',
+    //     sitemap: 'https://dev-stitch.netlify.app/sitemap.xml',
+    //     policy: [{ userAgent: '*', allow: '/' }],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
