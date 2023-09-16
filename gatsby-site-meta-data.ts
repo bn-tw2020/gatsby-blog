@@ -9,8 +9,6 @@ export default {
       repo: `bn-tw2020/gatsby-blog`,
     },
   },
-  ga: 'G-3HJ4DE7X8R', // Google Analytics Tracking ID
-
   author: {
     name: `스티치`,
     nickname: `stitch`,
