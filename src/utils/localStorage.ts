@@ -1,7 +1,7 @@
 export function getValueFromLocalStorage(key: string) {
   if (typeof window === 'undefined') return;
   const value = window.localStorage.getItem(key);
-  return JSON.parse(value || 'null');
+  return JSON.parse(value ?? '');
 }
 
 export function setValueToLocalStorage(key: string, value: string) {
