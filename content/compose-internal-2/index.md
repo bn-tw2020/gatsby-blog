@@ -126,3 +126,4 @@ Gap buffer는 index나 cursor를 갖는 구조로 flat array로 구성됩니다.
 ### 참고자료
 
 - [Gap Buffer](https://www.geeksforgeeks.org/gap-buffer-data-structure/)
+- [Under the hood of Jetpack compose part2](https://medium.com/androiddevelopers/under-the-hood-of-jetpack-compose-part-2-of-2-37b2c20c6cdd)
