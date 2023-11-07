@@ -18,14 +18,15 @@ type HomeProps = {
 
 const Home: React.FC<HomeProps> = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => new PostClass(node));
-  const featuredPosts = posts.filter((node) => node.categories.find((category) => category === 'featured'));
+  // const featuredPosts = posts.filter((node) => node.categories.find((category) => category === '컴포즈내부시리즈'));
   const { author } = data.site.siteMetadata;
 
   const recentPosts = posts.slice(0, 3);
 
-  const internPosts = featuredPosts.filter((post) => post.categories.find((category) => category === '인턴회고'));
-  const livePosts = featuredPosts.filter((post) => post.categories.find((category) => category === '회고'));
-  const experiencePosts = featuredPosts.filter((post) => post.categories.find((category) => category === 'Experience'));
+  const jetpackComposeIntenral = posts.filter((node) => node.categories.find((category) => category == '컴포즈내부시리즈'))
+  // featuredPosts.filter((post) => post.categories.find((category) => category === '컴포즈내부시리즈'));
+  // const livePosts = featuredPosts.filter((post) => post.categories.find((category) => category === '회고'));
+  // const experiencePosts = featuredPosts.filter((post) => post.categories.find((category) => category === 'Experience'));
 
   return (
     <Layout location={location}>
@@ -33,9 +34,9 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
       <MainBanner author={author} />
 
       <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
-      <FeaturedPostColumn title='인턴' posts={internPosts} />
-      <FeaturedPostColumn title='LIFE' posts={livePosts} />
-      <FeaturedPostColumn title='EXPERIENCE' posts={experiencePosts} />
+      <FeaturedPostColumn title='컴포즈 내부 시리즈' posts={jetpackComposeIntenral} />
+      {/* <FeaturedPostColumn title='LIFE' posts={livePosts} /> */}
+      {/* <FeaturedPostColumn title='EXPERIENCE' posts={experiencePosts} /> */}
     </Layout>
   );
 };
