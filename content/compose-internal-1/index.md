@@ -1,6 +1,6 @@
 ---
-emoji: 🔮
-title: Jetpack Compose Internal(1) - 기본 시스템 원리
+emoji: 🔎
+title: Compose Internal (1) - 기본 시스템 원리
 date: '2023-11-07'
 tags: 블로그 github-pages gatsby
 categories: 컴포즈내부시리즈
@@ -12,7 +12,7 @@ categories: 컴포즈내부시리즈
   - 그로 인해서, Compose UI는 각각의 플랫폼에 따라서 다른 UI 규칙을 가져가게 된다.
 
 ## 컴포즈 시스템의 기본
- - 컴포즈 시스템은 `위치 메모이제이션` 과 `Slot Table` 을 기반으로 작동한다.
+ - 컴포즈 시스템은 [`위치 메모이제이션`](/compose-internal-3) 과 [`Slot Table`](/compose-internal-2) 을 기반으로 작동한다.
  - `위치 메모이제이션`은 멱등성 개념과 비슷하다. 같은 위치에서 input으로 호출되면 같은 output이 나오는 것이며, 값을 캐싱하고 재사용하는 기술이다.
  - `Slot Table`은 발생한 컴포지션에 대한 정보들을 저장되는 공간이며 `Gap Buffer` 자료구조에 `Anchor` 라는 개념을 더해서 활용한다.
 

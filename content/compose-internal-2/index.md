@@ -1,6 +1,6 @@
 ---
-emoji: 🔮
-title: Jetpack Compose Internal(2) - slot table
+emoji: 🔎
+title: Compose Internal (2) - slot table
 date: '2023-11-08'
 tags: 블로그 github-pages gatsby
 categories: 컴포즈내부시리즈
