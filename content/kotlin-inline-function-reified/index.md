@@ -8,9 +8,9 @@ categories: Kotlin
 
 ## inline function
 
-```
-Using higher-order functions imposes certain runtime penalties: each function is an object, and it captures a closure. A closure is a scope of variables that can be accessed in the body of the function. Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.
-```
+
+> Using higher-order functions imposes certain runtime penalties: each function is an object, and it captures a closure. A closure is a scope of variables that can be accessed in the body of the function. Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.
+
 
 `inline functions`은 코틀린에서만 제공하는 키워드입니다.  
 
@@ -19,6 +19,7 @@ Using higher-order functions imposes certain runtime penalties: each function is
 
 하지만, `inline functions`은 내부적으로 함수 내용을 호출되는 위치해 복사해 런 타임 오버헤드를 줄여주게 됩니다.
 
+<br>
 
 ### 어떤 오버헤드가 발생할까?
 
@@ -66,6 +67,8 @@ public final class MainKt {
 
 test 함수 인자로 Function0 타입의 객체를 생성하고 이 객체의 invoke 호출을 통해 실행되고 있습니다.
 
+<br>
+
 ### inline
 
 코틀린 언어로 작성한 코드에 `inline` 키워드를 추가하게 되면 살짝 달리질 수 있습니다.
@@ -101,6 +104,8 @@ public final class MainKt {
 
 inline 키워드를 추가한 후 디컴파일된 자바 코드를 보면 함수의 코드가 직접 추가된 것을 확인이 가능합니다.
 
+<br>
+
 ## noinline function
 
 인자 앞에 `noinline` 키워드가 추가된다면 해당 인자는 `inline`에서 제외가 됩니다.
@@ -128,6 +133,8 @@ fun main() {
 }
 ```
 
+<br>
+
 ## non-local control flow
 
 - 코틀린에서 lambda function에서는 라벨을 통한 return을 제외하곤 return 문을 사용하면 에러가 발생합니다.
@@ -153,12 +160,14 @@ inline 키워드를 사용하면 위에서 볼 수 있듯이 코드가 직접 �
 
 > 비지역 반환의 문제점을 crossinline을 통해 해결이 가능하며, 기존처럼 'return' is not allowed here 라는 오류를 만나게 될 것이다.
 
+<br>
 
 ## crossinline
 
 `inline` 함수에서 인자로 받은 lambda를 다른 객체를 만들어 할당하게 된다면, 에러가 발생합니다.  
 즉, 파라미터로 전달받은 lambda를 호출 할 때 함수 몸체에서 직접 호출하지 않고 block 등 다른 실행 컨텍스트를 통해 호출해야하는 경우가 존재한다. 이 경우 람다 내에서 비지역 반환을 제어할 수 없게 됩니다. 이를 지정하기 위해서는 crossinline를 사용하게 됩니다.
 
+<br>
 
 ## reified
 
@@ -200,6 +209,8 @@ inline fun <reified T : Any> String.toKotlinObject(): T {
 ```
 
 - inline과 reified을 함께 사용한다면, T의 Class를 받을 필요도 없고, T는 일반적인 클래스로 사용이 될 수 있습니다.
+
+<br>
 
 ### 참고자료
 
