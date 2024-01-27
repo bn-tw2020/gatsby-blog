@@ -24,6 +24,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
   const recentPosts = posts.slice(0, 3);
 
   const jetpackComposeIntenral = posts.filter((node) => node.categories.find((category) => category == '컴포즈내부시리즈'))
+  const dependencyIntenral = posts.filter((node) => node.categories.find((category) => category == '의존성주입'))
   // featuredPosts.filter((post) => post.categories.find((category) => category === '컴포즈내부시리즈'));
   // const livePosts = featuredPosts.filter((post) => post.categories.find((category) => category === '회고'));
   // const experiencePosts = featuredPosts.filter((post) => post.categories.find((category) => category === 'Experience'));
@@ -35,6 +36,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
 
       <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
       <FeaturedPostColumn title='컴포즈 내부 시리즈' posts={jetpackComposeIntenral} />
+      <FeaturedPostColumn title='의존성 주입' posts={dependencyIntenral} />
       {/* <FeaturedPostColumn title='LIFE' posts={livePosts} /> */}
       {/* <FeaturedPostColumn title='EXPERIENCE' posts={experiencePosts} /> */}
     </Layout>
